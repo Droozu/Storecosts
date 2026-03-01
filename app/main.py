@@ -10,6 +10,7 @@ from aiogram.enums import ParseMode
 
 
 from app.bot.handlers.start import router as start_router
+from app.bot.handlers.receipt import router as receipt_router
 
 
 
@@ -20,6 +21,7 @@ async def main() -> None:
     bot = Bot(token=settings.tg_bot_token, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     dp = Dispatcher()
     dp.include_router(start_router)
+    dp.include_router(receipt_router)
     # And the run events dispatching
     await dp.start_polling(bot)
 
