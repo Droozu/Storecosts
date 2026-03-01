@@ -89,7 +89,6 @@ class AuthMiddleware(BaseMiddleware):
                 "🔐 Требуется подтверждение.\n"
                 "Отправьте одноразовый код **сообщением** (не фото и не файл).\n\n"
                 f"OTP (MVP): `{code}`",
-                parse_mode="Markdown",
             )
             return None
 
@@ -98,7 +97,7 @@ class AuthMiddleware(BaseMiddleware):
             code_text = (event.text or event.caption or "").strip()
 
             if not code_text:
-                await event.answer("🔐 Сейчас нужен код (обычным текстом).")
+                await event.answer("🔐 Сейчас нужен код (обычным текстом). Фото/файлы пока не принимаю.")
                 return None
 
             ok = self.otp.verify_code(user_id, code_text)
@@ -110,10 +109,10 @@ class AuthMiddleware(BaseMiddleware):
             await event.answer("❌ Неверный или просроченный код. Попробуйте ещё раз.")
             return None
 
-        # 7) callback или другое событие во время ожидания OTP — блокируем
+        # если это callback_query или другое событие
         await self._reply(event, "🔐 Сначала отправьте одноразовый код (текстом).")
         return None
-
+    
     @staticmethod
     def _extract_user_id(event: TelegramObject) -> Optional[int]:
         if isinstance(event, Message) and event.from_user:

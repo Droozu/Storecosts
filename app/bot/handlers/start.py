@@ -20,7 +20,6 @@ async def command_start_handler(message: Message) -> None:
     # Bot instance: `bot.send_message(chat_id=message.chat.id, ...)`
     await message.answer(f"Hello, {html.bold(message.from_user.full_name)}!")
 
-
 # @router.message()
 # async def any_text(message: Message):
 #     await message.answer("Сообщение получено (текст).")

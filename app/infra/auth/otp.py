@@ -1,6 +1,11 @@
 import secrets
 import time
+
 from typing import Dict
+
+
+
+
 
 
 class OTPService:
@@ -11,6 +16,7 @@ class OTPService:
         self.ttl_seconds = ttl_seconds
         self._storage: Dict[str, tuple[str, float]] = {}
         # формат: {telegram_user_id: (otp_code, expires_at)}
+
 
     def generate_code(self, telegram_user_id: int) -> str:
         code = f"{secrets.randbelow(1_000_000):06d}"
