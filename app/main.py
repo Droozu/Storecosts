@@ -8,13 +8,9 @@ from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 
-
 from app.bot.handlers.start import router as start_router
 from app.bot.handlers.receipt import router as receipt_router
 
-
-
-    
 async def main() -> None:
     settings = Settings()
     # Initialize Bot instance with default bot properties which will be passed to all API calls
