@@ -198,3 +198,5 @@ Desktop.ini
 
 # VS Code
 .vscode/
+
+app/infra/storage/STORECOST.fdb 
