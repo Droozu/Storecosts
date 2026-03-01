@@ -21,6 +21,10 @@ async def command_start_handler(message: Message) -> None:
     await message.answer(f"Hello, {html.bold(message.from_user.full_name)}!")
 
 
+@router.message()
+async def any_text(message: Message):
+    await message.answer("Сообщение получено (текст).")
+
 # @router.message()
 # async def echo_handler(message: Message) -> None:
 #     """
