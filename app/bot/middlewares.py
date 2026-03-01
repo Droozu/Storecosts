@@ -89,6 +89,7 @@ class AuthMiddleware(BaseMiddleware):
                 "🔐 Требуется подтверждение.\n"
                 "Отправьте одноразовый код **сообщением** (не фото и не файл).\n\n"
                 f"OTP (MVP): `{code}`",
+                parse_mode="Markdown",
             )
             return None
 
