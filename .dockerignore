@@ -1,0 +1,23 @@
+# .dockerignore
+.git
+.gitignore
+node_modules
+dist
+build
+__pycache__
+*.pyc
+.env
+.DS_Store
+.vscode
+.idea
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+.venv/
+venv/
+.env
+.git/
+.gitignore
+README.md

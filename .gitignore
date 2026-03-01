@@ -179,3 +179,22 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+/tmp
+
+# Docker / Compose local overrides
+compose.override.yml
+docker-compose.override.yml
+
+# Docker build metadata / cache 
+.docker/
+
+# Local logs
+*.log
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# VS Code
+.vscode/

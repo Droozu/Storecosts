@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    container_name: storecosts_app
+    environment:
+      - APP_ENV=dev
+    volumes:
+      - ./app:/app/app
+    command: ["python", "-m", "app.main"]
