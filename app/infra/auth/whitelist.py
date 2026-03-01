@@ -6,7 +6,7 @@ class WhitelistSettings(BaseSettings):
     """
     TG_WHITELIST_USERS=12345678,98765432
     """
-    TG_WHITELIST_USERS: str = ""
+    TG_WHITELIST_USERS: str = "99955550"
 
     model_config = SettingsConfigDict(env_prefix="", extra="ignore")
 
