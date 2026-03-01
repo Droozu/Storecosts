@@ -2,6 +2,8 @@ services:
   app:
     build: .
     container_name: storecosts_app
+    env_file:
+      - .env
     environment:
       - APP_ENV=dev
     volumes:
