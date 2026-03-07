@@ -5,6 +5,7 @@ from typing import List
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="allow")
     tg_bot_token: str = Field(alias="TG_BOT_TOKEN")
+    ds_token: str = Field(alias="DEEPSEEK_TOKEN")
 
 
     # RedDatabase 5 (Firebird)
